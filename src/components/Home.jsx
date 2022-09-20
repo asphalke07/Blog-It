@@ -1,5 +1,6 @@
-import React from 'react'
-import { useState } from 'react'
+import React from 'react';
+import { useState } from 'react';
+import Bloglist from "./Bloglist";
 
 const Home = () => {
   const [blogs,setBlogs]=useState([
@@ -8,17 +9,14 @@ const Home = () => {
     { title: 'Web dev new app', body: 'lorem ipsum...', author: 'Phalke', id: 3 }
   ]);
 
+  function handledelete(id){
+    const newblogs=blogs.filter((blog)=>blog.id !== id);
+    setBlogs(newblogs);
+  }
+
   return (
     <div className="home">
-      {blogs.map(function(blog){
-        // JS MAP function always returns a value
-        return(
-          <div className="blog-preview" key={blog.id}>
-            <h2>{blog.title}</h2>
-            <p>Written by {blog.author}</p>
-          </div>
-        )
-      })}
+      <Bloglist blogs={blogs} title="My blogs" handledelete={handledelete}/>
     </div>
   )
 }
