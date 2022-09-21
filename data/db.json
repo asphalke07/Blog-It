@@ -1,0 +1,16 @@
+{
+  "blogs": [
+    {
+      "title": "Web dev new app",
+      "body": "lorem ipsum...",
+      "author": "Phalke",
+      "id": 3
+    },
+    {
+      "title": "sxac",
+      "body": "cascac",
+      "author": "mario",
+      "id": 4
+    }
+  ]
+}
